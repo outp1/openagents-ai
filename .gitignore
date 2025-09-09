@@ -1,0 +1,9 @@
+# Ignore common build artifacts and caches
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+
+# Local config backups
+*.backup
+

@@ -1,0 +1,30 @@
+# Specification: Markdown-based AI Agents for opencode
+
+- Goal: Store AI-agent definitions as Markdown files and expose a lightweight CLI to link them into opencode global or per-project JSON config.
+- Scope: Create a minimal, safe, extensible structure with a single example agent, a linker CLI, and a sample config.
+- Assumptions:
+  - Config files are JSON (opencode.json) or JSONC; the CLI works with JSON for now.
+  - Markdown agent files include a YAML front matter with id, name, description, model, prompt, and tools.
+- Architecture:
+  - agents/ - Markdown agent definitions
+  - config/ - per-project JSON config (opencode.json)
+  - scripts/ - CLI (opencode_agent_linker.py)
+  - docs/ - reference/spec notes (optional)
+- Data Model (agent)
+  - id: string
+  - name: string
+  - description: string
+  - model: string
+  - prompt: string
+  - tools: { write: bool, edit: bool } (optional)
+- CLI Commands:
+  - link -m <md> -s <scope> [-c <path>]
+  - unlink -a <agent-id> [-c <path>] [-s <scope>]
+  - list [-c <path>] [-s <scope>]
+- Validation & Safety:
+  - Parser handles a small subset of YAML (front matter) safely without external dependencies.
+  - Linking writes to JSON config only (no shell execution, no file edits beyond config).
+- Extensibility:
+  - Support for more complex YAML front matter, more complex tool flags, and optional Markdown-based agent files with extra metadata in future iterations.
+- Non-goals:
+  - Full opencode runtime integration; this repo focuses on artifact storage and linking workflow.
