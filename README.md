@@ -1,4 +1,4 @@
-opencode-ai Agents (Markdown) Storage
+Open Agents (Markdown) Storage
 =====================================
 
 **Open-source store of useful AI-agents.**
