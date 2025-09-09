@@ -1,22 +1,28 @@
 opencode-ai Agents (Markdown) Storage
 =====================================
 
-Purpose
-- Store AI-agent definitions as Markdown files and link them into opencode config (global or per-project).
+**Open-source store of useful AI-agents.**
+
+> THIS PROJECT IS ON EARLY DEVELOPING STAGE AND SUPPORTS ONLY OPENCODE-AI SEMANTICS
 
 How it works
 - Markdown files under `agents/` describe an agent using a YAML front matter block.
-- A small CLI under `scripts/opencode_agent_linker.py` converts a Markdown agent into a config entry and links it into a JSON config (`opencode.json`).
+
+Usage quickstart
+- Choose an agent: Pick Markdown file from `agents/`.
+- Place its config to one of these places ([reference to opencode-ai docs](https://opencode.ai/docs/agents/#markdown)):
+  - For Global Installation: ~/.config/opencode/agent/
+  - Per-project: .opencode/agent/
+
+### Roadmap
+- MORE and MORE AI agents
+- Lightweight cli tool to automatically pick and install agents. (Inspired by [MCPHub](https://github.com/ravitemer/mcp-hub))
+- Support for other AI clients (e.g cursor, claude-code)
+
+## CONTRIBUTING
 
 Project layout
 - `agents/` - Markdown agent definitions (one per agent).
-- `config/` - Per-project config examples (and the global config path convention).
-- `scripts/` - CLI tooling to link Markdown agents into configs.
+- `scripts/` - CLI tooling to link Markdown agents into configs. (WORK IN PROGRESS)
 - `SPEC.md` - Task specification for this repo.
 
-Usage quickstart
-- Add an agent: place a Markdown file in `agents/` with the required front matter.
-- Link to per-project config: `python3 scripts/opencode_agent_linker.py link -m agents/<id>.md -s project`.
-- Link to global config: `python3 scripts/opencode_agent_linker.py link -m agents/<id>.md -s global`.
-- List linked agents: `python3 scripts/opencode_agent_linker.py list -s project`.
-- Unlink: `python3 scripts/opencode_agent_linker.py unlink -a <agent-id> -s project`.
