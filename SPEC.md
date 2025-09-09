@@ -1,30 +1,45 @@
-# Specification: Markdown-based AI Agents for opencode
+# Specification for opencode-ai-agents
 
-- Goal: Store AI-agent definitions as Markdown files and expose a lightweight CLI to link them into opencode global or per-project JSON config.
-- Scope: Create a minimal, safe, extensible structure with a single example agent, a linker CLI, and a sample config.
-- Assumptions:
-  - Config files are JSON (opencode.json) or JSONC; the CLI works with JSON for now.
-  - Markdown agent files include a YAML front matter with id, name, description, model, prompt, and tools.
-- Architecture:
-  - agents/ - Markdown agent definitions
-  - config/ - per-project JSON config (opencode.json)
-  - scripts/ - CLI (opencode_agent_linker.py)
-  - docs/ - reference/spec notes (optional)
-- Data Model (agent)
-  - id: string
-  - name: string
-  - description: string
-  - model: string
-  - prompt: string
-  - tools: { write: bool, edit: bool } (optional)
-- CLI Commands:
-  - link -m <md> -s <scope> [-c <path>]
-  - unlink -a <agent-id> [-c <path>] [-s <scope>]
-  - list [-c <path>] [-s <scope>]
-- Validation & Safety:
-  - Parser handles a small subset of YAML (front matter) safely without external dependencies.
-  - Linking writes to JSON config only (no shell execution, no file edits beyond config).
-- Extensibility:
-  - Support for more complex YAML front matter, more complex tool flags, and optional Markdown-based agent files with extra metadata in future iterations.
-- Non-goals:
-  - Full opencode runtime integration; this repo focuses on artifact storage and linking workflow.
+## Overview
+opencode-ai-agents is an open-source store of AI agents defined as Markdown files under the `agents/` directory.
+
+## Project Structure
+- `agents/` - Markdown agent definitions (one per agent).
+- `scripts/` - CLI tooling to link Markdown agents into configs.
+- `SPEC.md` - This specification document.
+
+## README Specifications
+- **Purpose**: The README should onboard users and new contributors, providing a concise project overview, usage guidance, and an overview of the repository layout.
+
+- **Scope**: Non-normative guidance intended to standardize README quality and consistency across the repository.
+
+- **Content Requirements**:
+  - A top-level title that clearly identifies the project (the example in this repo uses "opencode-ai Agents (Markdown) Storage").
+  - A brief project introduction describing the repository's intent and current state.
+  - A section explaining how agents are stored (e.g., `agents/` with one file per agent and YAML front matter).
+  - A quickstart or usage section describing how to locate and configure agents (globally or per-project).
+  - A project layout section describing major directories (`agents/`, `scripts/`, `SPEC.md`).
+  - A roadmap or future work section (optional).
+  - A contribution or collaboration section with how to contribute to the project.
+
+- **Formatting & Style**:
+  - Use Markdown with clear headings and bullet lists.
+  - Use backticks for file paths and commands.
+  - Maintain consistent, readable formatting across sections.
+
+- **Quality & Validation**:
+  - Self-contained document with no reliance on external docs for core onboarding.
+  - Consistent terminology and structure across repository READMEs (if present).
+
+- **Maintenance**:
+  - Treat README as a living document; align content with repository changes, but update this SPEC if the README's intended spec changes.
+
+## Design Principles
+- Simplicity: keep READMEs readable and aligned with file layout.
+- Clarity: ensure readers understand where to find agents and how to extend the repo.
+- Consistency: standardize terms and structure across READMEs.
+
+## References
+- agents/: Directory with agent definitions.
+- scripts/: CLI tooling.
+- SPEC.md: This specification document.
