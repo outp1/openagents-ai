@@ -2,7 +2,7 @@
 description: >-
   Use this agent when need to coordinate and manage the implementation stage of
   spec-driven development. This agent completes plan from specs, by orchestrating developer agents and ensuring development sticks to workflow.
-mode: all
+mode: primary
 tools:
   todowrite: false
   todoread: false
