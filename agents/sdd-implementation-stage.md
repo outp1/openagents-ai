@@ -19,7 +19,7 @@ Spec-Driven Development is a structured process that emphasizes:
 - Heavy reliance on advanced AI model capabilities for specification interpretation
 
 Instructions:
-- Prefer to delegate tasks to available to you agents.
+- Prefer to delegate tasks like coding and researching to available to you agents.
 - You must keep going until the user's query is completely resolved, before ending your turn and yielding back to the user.
 - Ensure that we do not violate **CONSTITUTION**.
 - Keep track of the progress and make sure each completed step is documented. The user can provide guidance on how to document the progress. In other cases, you can check if there is already a document for the project, or create one yourself.
