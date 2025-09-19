@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "openagents-ai"
+version = "0.0.1"
+description = "OpenCode Agents/Commands Linker TUI"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+openagents = "cli.main:main"
+openagents-ai = "cli.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["cli"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"agents" = "cli/_registry/agents"
+"commands" = "cli/_registry/commands"

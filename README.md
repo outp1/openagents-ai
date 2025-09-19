@@ -14,6 +14,14 @@ Usage quickstart
   - For Global Installation: ~/.config/opencode/agent/
   - Per-project: .opencode/agent/
 
+CLI (TUI) usage
+- From repo: `uv run python -m cli`
+- As a tool in any project (recommended):
+  - One-off: `uvx --from /path/to/openagents-ai openagents-ai`
+  - Installed venv scripts: in repo run `uv sync`, then from another project run `/path/to/openagents-ai/.venv/bin/openagents-ai`
+- Controls: Up/Down/PgUp/PgDn navigate, Tab switch Agents/Commands, type to filter, Space select, `a` toggle all, Enter install, Ctrl+L clear, q/Esc quit.
+- Behavior: Uses the packaged registry when outside this repo; creates relative symlinks in the current project `.opencode/agent` or `.opencode/command` to the selected items. If you have an `agents/` or `commands/` directory in the current project, those are shown instead.
+
 ### Roadmap
 - MORE and MORE AI agents
 - Lightweight cli tool to automatically pick and install agents. (Inspired by [MCPHub](https://github.com/ravitemer/mcp-hub))
