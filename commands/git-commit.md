@@ -6,3 +6,5 @@ Follow the instructions below. If the user's input conflicts with the instructio
 3. If there are too many changes, try to group them to make atomic commits.
 4. Make a concise commit without a description. REMEMBER to follow project's commits conventions.
 5. Output commit message and success status in a single line.
+
+User's input: $ARGUMENTS

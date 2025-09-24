@@ -25,7 +25,7 @@ $ARGUMENTS
    - Stop when all sub-questions are addressed to acceptable confidence or further effort has diminishing returns. Document remaining gaps and next steps.
 
 ## Session file management
-- Location: ./opencode/research-sessions/
+- Location: .ai/research-sessions/ (create if not exists)
 - Naming: {yyyy-mm-dd}-{short-slug-of-task}.md (use a URL-safe slug, lowercase, hyphens).
 - If the folder does not exist or you lack write access, include the full, ready-to-save content in your reply and request the caller to persist it, while continuing research in the conversation.
 - Always update the same session file for the current task. Never scatter notes across multiple files.
